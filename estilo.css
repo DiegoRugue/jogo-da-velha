@@ -1,0 +1,47 @@
+#titulo {
+    text-align: center;
+}
+#tabuleiro {
+    margin: 0 auto;
+}
+
+td {
+    width: 110px;
+    height: 110px;
+}
+
+#a1 {
+    border-left: none;
+    border-top: none;
+}
+#a2 {
+    border-top: none;
+}
+#a3{
+    border-top: none;
+    border-right: none;
+}
+
+#b1{
+    border-left: none;
+}
+#b3{
+    border-right: none;
+}
+
+#c1{
+    border-left: none;
+    border-bottom: none;
+}
+#c2{
+    border-bottom: none;
+}
+#c3{
+    border-bottom: none; 
+    border-right: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
