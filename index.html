@@ -7,6 +7,7 @@
     <title>Jogo da Velha</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="estilo.css" />
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <script src="main.js"></script>
 
 </head>
@@ -19,7 +20,7 @@
     <section id="principal">
         <table id="tabuleiro">
             <tr>
-                <td id="a_1" onclick="entrada('a_1')"></td>
+                <td id="a_1" onclick="entrada('a_1')" disabled></td>
                 <td id="a_2" onclick="entrada('a_2')"></td>
                 <td id="a_3" onclick="entrada('a_3')"></td>
             </tr>
@@ -35,6 +36,7 @@
             </tr>
         </table>
         <p id="resultado"></p>
+        <a class="centro" href="index.html">Reiniciar</a>
     </section>
 
 </body>

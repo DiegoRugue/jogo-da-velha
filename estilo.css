@@ -1,13 +1,83 @@
-#titulo {
-    text-align: center;
-}
-#tabuleiro {
-    margin: 0 auto;
+@media only screen and (min-width: 200px) and (max-width: 400px) {
+    #principal {
+        width: 80vw;
+        margin: 0 auto;
+        box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, .5);
+        background-color: white;
+        padding: 10px;
+    }
+    td {
+        width: 30vw;
+        height: 30vw;
+    }
+    #titulo {
+        text-align: center;
+        font-size: 10vw;
+    }
+    a {
+        font-size: 5vw;
+    }
+    body {
+        background-color: rgba(84, 13, 9, .5);
+        font-family: 'Indie Flower', cursive; 
+        height: 500px;
+    }
 }
 
-td {
-    width: 120px;
-    height: 120px;
+@media only screen and (min-width: 401px) and (max-width: 800px) {
+    #principal {
+        width: 60vw;
+        margin: 0 auto;
+        box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, .5);
+        background-color: white;
+        padding: 15px;
+    }
+    td {
+        width: 20vw;
+        height: 20vw;
+    }
+    #titulo {
+        text-align: center;
+        font-size: 10vw;
+    }
+    a {
+        font-size: 5vw;
+    }
+    body {
+        background-color: rgba(84, 13, 9, .5);
+        font-family: 'Indie Flower', cursive; 
+        height: 800px;
+    }
+}
+
+@media only screen and (min-width: 801px){
+    #principal {
+        width: 45vw;
+        margin: 0 auto;
+        box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, .5);
+        background-color: white;
+        padding: 20px;
+    }
+    td {
+        width: 9vw;
+        height: 9vw;
+    }
+    #titulo {
+        text-align: center;
+        font-size: 4vw;
+    }
+    a {
+        font-size: 2vw;
+    }
+    body {
+        background-color: rgba(84, 13, 9, .5);
+        font-family: 'Indie Flower', cursive; 
+        height: 1250px;
+    }
+}
+
+#tabuleiro {
+    margin: 0 auto;
 }
 
 #a_1 {
@@ -48,4 +118,5 @@ img {
 
 #resultado {
     text-align: center;
+    font-size: 5vw;
 }
