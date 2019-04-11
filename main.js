@@ -1,5 +1,7 @@
-let cont = 0;
+let cont = 1;
 let jogoAtivo = true;
+let boot = true;
+let c = 0;
 let tabuleiro = Array(3);
 
 tabuleiro['a'] = Array(3);
@@ -18,32 +20,34 @@ tabuleiro['c']['1'] = 0;
 tabuleiro['c']['2'] = 0;
 tabuleiro['c']['3'] = 0;
 
-function entrada(id) {
-    let teste = document.getElementById(id);
+const inserirImagem = (img, id) => {
+    //console.log(id);
+    document.getElementById(id).innerHTML = `<img src="./img/${img}.png">`;
+    document.getElementById(id).setAttribute('onclick', '');
+    let separa = id.split('_');
+    tabuleiro[separa[0]][separa[1]] = img;
+    if (verifica()) {
+        document.getElementById('resultado').innerHTML = verifica();
+        window.scrollTo(0,2000);
+    }
+}
 
+
+function entrada(id) {
     cont ++;
     if (jogoAtivo) {
         if (cont % 2 == 0) {
-            teste.innerHTML = '<img src="./img/x.png">';
-            document.getElementById(id).setAttribute('onclick', '');
-            let separa = id.split('_');
-            tabuleiro[separa[0]][separa[1]] = 'x';
-            if (verifica()) {
-                document.getElementById('resultado').innerHTML = verifica();
-                window.scrollTo(0,2000);
+            inserirImagem('x', id);
+            if (boot) {
+                inteligentao(id);
+                cont ++;
             }
         } else {
-            teste.innerHTML = '<img src="./img/o.png">';
-            document.getElementById(id).setAttribute('onclick', '');
-            let separa = id.split('_');
-            tabuleiro[separa[0]][separa[1]] = 'o';
-            if (verifica()) {
-                document.getElementById('resultado').innerHTML = verifica();
-                window.scrollTo(0,2000);
+            if (!boot) {
+               inserirImagem('o', id);
             }
         }
     }
-    console.log(tabuleiro);
 }
 
 function verifica() {
@@ -142,8 +146,38 @@ function verifica() {
               tabuleiro['c']['1'] == 'o') {
                 jogoAtivo = false;
                 return "O é o vencedor";
-    } else if(cont == 9) {
+    } else if(cont == 10) {
         jogoAtivo = false;
         return `Deu velha! <img src='./img/palmirinha.jpg'>`
+    }
+}
+
+function inteligentao(id) {
+    let jogada = id.split('_');
+    jogada = jogada.toString();
+    console.log(jogada);
+    verificadeira('a');
+    c = 0;
+    verificadeira('b');
+    c = 0;
+    verificadeira('c');
+    c = 0;
+
+}
+
+const verificadeira = (indice) => {
+    for (let i = 0; i < 3; i++) {
+        if (tabuleiro[indice][i] == 'x') {
+            c ++;
+        } 
+    }
+    if (c == 2) {
+        if (tabuleiro[indice]['1'] == 0) {
+            inserirImagem("o", `${indice}_1`);
+        } else if (tabuleiro[indice]['2'] == 0) {
+            inserirImagem("o", `${indice}_2`);
+        } else if (tabuleiro[indice]['3'] == 0) {
+            inserirImagem("o", `${indice}_3`);
+        }
     }
 }
