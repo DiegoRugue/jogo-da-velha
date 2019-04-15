@@ -13,32 +13,37 @@
 </head>
 
 <body>
-    <header>
-        <h1 id="titulo">Jogo da Velha</h1>
-    </header>
+    <div class="container">
+        <header id="cabecalho">
+            <h1 class="titulo">Jogo da Velha</h1>
+            <h3 class="sub-titulo">Jogar contra Bot:</h3>
+            <button class="btn" onclick="setBot('facil')">Facil</button>
+            <button class="btn" onclick="setBot('medio')">Medio</button>
+            <button class="btn" onclick="setBot('dificil')">Dificil</button>
+        </header>
 
-    <section id="principal">
-        <table id="tabuleiro">
-            <tr>
-                <td id="a_1" onclick="entrada('a_1')" disabled></td>
-                <td id="a_2" onclick="entrada('a_2')"></td>
-                <td id="a_3" onclick="entrada('a_3')"></td>
-            </tr>
-            <tr>
-                <td id="b_1" onclick="entrada('b_1')"></td>
-                <td id="b_2" onclick="entrada('b_2')"></td>
-                <td id="b_3" onclick="entrada('b_3')"></td>
-            </tr>
-            <tr>
-                <td id="c_1" onclick="entrada('c_1')"></td>
-                <td id="c_2" onclick="entrada('c_2')"></td>
-                <td id="c_3" onclick="entrada('c_3')"></td>
-            </tr>
-        </table>
-        <p id="resultado"></p>
-        <a class="centro" href="index.html">Reiniciar</a>
-        <a style="float: right;" href="#" onclick="setBot()">Jogar contra Bot</a>
-    </section>
+        <section id="principal">
+            <table id="tabuleiro">
+                <tr>
+                    <td id="a_1" onclick="entrada('a_1')" disabled></td>
+                    <td id="a_2" onclick="entrada('a_2')"></td>
+                    <td id="a_3" onclick="entrada('a_3')"></td>
+                </tr>
+                <tr>
+                    <td id="b_1" onclick="entrada('b_1')"></td>
+                    <td id="b_2" onclick="entrada('b_2')"></td>
+                    <td id="b_3" onclick="entrada('b_3')"></td>
+                </tr>
+                <tr>
+                    <td id="c_1" onclick="entrada('c_1')"></td>
+                    <td id="c_2" onclick="entrada('c_2')"></td>
+                    <td id="c_3" onclick="entrada('c_3')"></td>
+                </tr>
+            </table>
+            <p id="resultado"></p>
+            <button class="btn"onclick="reload()">Reiniciar</button>
+        </section>
+    </div>
 
 </body>
 

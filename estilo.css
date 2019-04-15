@@ -1,81 +1,181 @@
+*  {
+    margin:0;
+    padding:0;
+}
+
+html, body {
+    height:100%;
+    background-color: #004c40;
+    font-family: 'Indie Flower', cursive;
+}
+
 @media only screen and (min-width: 200px) and (max-width: 400px) {
-    #principal {
-        width: 80vw;
-        margin: 0 auto;
-        box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, .5);
-        background-color: white;
-        padding: 10px;
+    header {
+        margin-top: 0px;
+        position: fixed;
     }
-    td {
-        width: 30vw;
-        height: 30vw;
+    #cabecalho {
+        font-size: 8vw;
+        text-align: center;
+        position: relative;
     }
-    #titulo {
+    .titulo {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        background-color: #00796b;
+        color: #ffffff;
         text-align: center;
         font-size: 10vw;
     }
-    a {
-        font-size: 5vw;
+    .sub-titulo {
+        font-size: 8vw;
+        display: block;
     }
-    body {
-        background-color: rgba(84, 13, 9, .5);
-        font-family: 'Indie Flower', cursive; 
-        height: 500px;
-    }
-}
-
-@media only screen and (min-width: 401px) and (max-width: 800px) {
     #principal {
-        width: 60vw;
         margin: 0 auto;
+        width: 60vw;
         box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, .5);
-        background-color: white;
-        padding: 15px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    #tabuleiro {
+        padding-bottom: 10px;
     }
     td {
         width: 20vw;
         height: 20vw;
     }
-    #titulo {
-        text-align: center;
-        font-size: 10vw;
-    }
-    a {
-        font-size: 5vw;
-    }
-    body {
-        background-color: rgba(84, 13, 9, .5);
+    .btn {
+        border: 1px solid black;
+        border-radius: 50px;
+        background-color: #00796b;
+        color: #ffffff;
+        padding: 10px;
+        margin: 5px;
         font-family: 'Indie Flower', cursive; 
-        height: 800px;
+        font-size: 20px;
+        display: inline;
+    }
+    .container {
+        margin: 0 auto;
+        max-width: 400px;
+        width: 75%;
+        background-color: #ffffff;
+        min-height:90%;
+        position:relative;
     }
 }
 
-@media only screen and (min-width: 801px){
+@media only screen and (min-width: 401px) and (max-width: 800px) {
+    header {
+        margin-top: 0px;
+        position: fixed;
+    }
+    #cabecalho {
+        font-size: 8vw;
+        text-align: center;
+        position: relative;
+    }
+    .titulo {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        background-color: #00796b;
+        color: #ffffff;
+        text-align: center;
+        font-size: 5vw;
+    }
+    .sub-titulo {
+        font-size: 4vw;
+        display: block;
+    }
     #principal {
-        width: 45vw;
         margin: 0 auto;
+        width: 50vw;
         box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, .5);
-        background-color: white;
         padding: 20px;
+        margin-top: 20px;
+    }
+    #tabuleiro {
+        padding-bottom: 10px;
+    }
+    td {
+        width: 15vw;
+        height: 15vw;
+    }
+    .btn {
+        border: 1px solid black;
+        border-radius: 50px;
+        background-color: #00796b;
+        color: #ffffff;
+        padding: 10px;
+        font-family: 'Indie Flower', cursive; 
+        font-size: 20px;
+        display: inline;
+    }
+    .container {
+        margin: 0 auto;
+        max-width: 800px;
+        width: 70%;
+        background-color: #ffffff;
+        min-height:95%;
+        position:relative;
+    }
+    
+}
+
+@media only screen and (min-width: 801px){
+    header {
+        margin-top: 0px;
+        position: fixed;
+    }
+    #cabecalho {
+        font-size: 45px;
+        text-align: center;
+        position: relative;
+    }
+    .titulo {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        background-color: #00796b;
+        color: #ffffff;
+        text-align: center;
+        font-size: 4vw;
+    }
+    .sub-titulo {
+        font-size: 2vw;
+        display: inline;
+    }
+    #principal {
+        margin: 0 auto;
+        width: 45vw;
+        box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, .5);
+        padding: 20px;
+        margin-top: 20px;
     }
     td {
         width: 9vw;
         height: 9vw;
     }
-    #titulo {
-        text-align: center;
-        font-size: 4vw;
-    }
-    a {
-        font-size: 2vw;
-    }
-    body {
-        background-color: rgba(84, 13, 9, .5);
+    .btn {
+        border: 1px solid black;
+        border-radius: 50px;
+        background-color: #00796b;
+        color: #ffffff;
+        padding: 10px;
+        margin: 5px;
         font-family: 'Indie Flower', cursive; 
-        height: 1250px;
+        font-size: 30px;
+        display: inline;
+    }
+    .container {
+        margin: 0 auto;
+        max-width: 1280px;
+        width: 75%;
+        background-color: #ffffff;
+        min-height:100%;
+        position:relative;
     }
 }
-
 #tabuleiro {
     margin: 0 auto;
 }

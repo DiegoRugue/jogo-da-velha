@@ -2,6 +2,7 @@ let cont = 1;
 let jogoAtivo = true;
 let boot = false;
 let para = false;
+let nivel = '';
 let tabuleiro = Array(3);
 
 tabuleiro['a'] = Array(3);
@@ -20,12 +21,17 @@ tabuleiro['c']['1'] = 0;
 tabuleiro['c']['2'] = 0;
 tabuleiro['c']['3'] = 0;
 
-function setBot() {
+function setBot(nivelJogo) {
     if (cont > 1) {
         alert("Reinicie o jogo e depois clique em Jogar contra Bot");
     } else {
         boot = true;
+        nivel = nivelJogo;
     }
+}
+
+function reload() {
+    window.location.reload();
 }
 
 const inserirImagem = (img, id) => {
@@ -163,24 +169,55 @@ function inteligentao(id) {
     para = false;
     let jogada = id.split('_');
     jogada = jogada.toString();
-    console.log(jogada);
-    if (!para) verificaDiagonal('o');
-    if (!para) verificaDiagonalSecundaria('o');
-    if (!para) verificaLinha('a', 'o');
-    if (!para) verificaLinha('b', 'o');
-    if (!para) verificaLinha('c', 'o');
-    if (!para) verificaDiagonalSecundaria('x');
-    if (!para) verificaDiagonal('x');
-    if (!para) verificaLinha('a', 'x');
-    if (!para) verificaLinha('b', 'x');
-    if (!para) verificaLinha('c', 'x');
-    if (!para) verificaColuna(1, 'o');
-    if (!para) verificaColuna(2, 'o');
-    if (!para) verificaColuna(3, 'o');
-    if (!para) verificaColuna(1, 'x');
-    if (!para) verificaColuna(2, 'x');
-    if (!para) verificaColuna(3, 'x');
-    if (!para) randown();
+    if (nivel == 'facil') {
+        if (!para && jogoAtivo) jogaMeio();
+        if (!para && jogoAtivo) verificaDiagonal('o');
+        if (!para && jogoAtivo) verificaDiagonalSecundaria('o');
+        if (!para && jogoAtivo) verificaLinha('a', 'o');
+        if (!para && jogoAtivo) verificaLinha('b', 'o');
+        if (!para && jogoAtivo) verificaLinha('c', 'o');
+        if (!para && jogoAtivo) verificaColuna(1, 'o');
+        if (!para && jogoAtivo) verificaColuna(2, 'o');
+        if (!para && jogoAtivo) verificaColuna(3, 'o');
+        if (!para && jogoAtivo) randown();
+    } else if (nivel == 'medio') {
+        if (!para && jogoAtivo) verificaDiagonal('o');
+        if (!para && jogoAtivo) verificaDiagonalSecundaria('o');
+        if (!para && jogoAtivo) verificaLinha('a', 'o');
+        if (!para && jogoAtivo) verificaLinha('b', 'o');
+        if (!para && jogoAtivo) verificaLinha('c', 'o');
+        if (!para && jogoAtivo) verificaDiagonalSecundaria('x');
+        if (!para && jogoAtivo) verificaDiagonal('x');
+        if (!para && jogoAtivo) verificaLinha('a', 'x');
+        if (!para && jogoAtivo) verificaLinha('b', 'x');
+        if (!para && jogoAtivo) verificaLinha('c', 'x');
+        if (!para && jogoAtivo) verificaColuna(1, 'o');
+        if (!para && jogoAtivo) verificaColuna(2, 'o');
+        if (!para && jogoAtivo) verificaColuna(3, 'o');
+        if (!para && jogoAtivo) verificaColuna(1, 'x');
+        if (!para && jogoAtivo) verificaColuna(2, 'x');
+        if (!para && jogoAtivo) verificaColuna(3, 'x');
+        if (!para && jogoAtivo) randown();
+    } else if (nivel == 'dificil') {
+        if (!para && jogoAtivo) jogaMeio();
+        if (!para && jogoAtivo) verificaDiagonal('o');
+        if (!para && jogoAtivo) verificaDiagonalSecundaria('o');
+        if (!para && jogoAtivo) verificaLinha('a', 'o');
+        if (!para && jogoAtivo) verificaLinha('b', 'o');
+        if (!para && jogoAtivo) verificaLinha('c', 'o');
+        if (!para && jogoAtivo) verificaDiagonalSecundaria('x');
+        if (!para && jogoAtivo) verificaDiagonal('x');
+        if (!para && jogoAtivo) verificaLinha('a', 'x');
+        if (!para && jogoAtivo) verificaLinha('b', 'x');
+        if (!para && jogoAtivo) verificaLinha('c', 'x');
+        if (!para && jogoAtivo) verificaColuna(1, 'o');
+        if (!para && jogoAtivo) verificaColuna(2, 'o');
+        if (!para && jogoAtivo) verificaColuna(3, 'o');
+        if (!para && jogoAtivo) verificaColuna(1, 'x');
+        if (!para && jogoAtivo) verificaColuna(2, 'x');
+        if (!para && jogoAtivo) verificaColuna(3, 'x');
+        if (!para && jogoAtivo) randown();
+    }
 
 }
 
@@ -198,7 +235,6 @@ const verificaLinha = (indice, img) => {
                 aux = i;
             }
         }
-        console.log(`${indice}_${aux}`);
         if (tabuleiro[indice][aux] == 0) {
             inserirImagem('o', `${indice}_${aux}`);
             return para = true;
@@ -215,7 +251,6 @@ const verificaColuna = (indice, img) => {
             c ++;
         } 
     }
-    console.log(c);
     if (c == 2) {
         for (let i = 0; i < 3; i++) {
             if (tabuleiro[col[i]][indice] == 0) {
@@ -240,7 +275,6 @@ const verificaDiagonal = (img) => {
     if (tabuleiro['c']['3'] == img) {
         c ++;
     }
-    console.log(c);
     if (c == 2) {
         if (tabuleiro['a']['1'] == 0) {
             inserirImagem('o', 'a_1');
@@ -266,7 +300,6 @@ const verificaDiagonalSecundaria = (img) => {
     if (tabuleiro['c']['1'] == img) {
         c ++;
     }
-    console.log(c);
     if (c == 2) {
         if (tabuleiro['a']['3'] == 0) {
             inserirImagem('o', 'a_3');
@@ -291,5 +324,12 @@ const randown = () => {
         return para = true;
     } else {
         randown();
+    }
+}
+
+const jogaMeio = () => {
+    if (tabuleiro['b']['2'] == 0) {
+        inserirImagem('o','b_2');
+        return para = true;
     }
 }
