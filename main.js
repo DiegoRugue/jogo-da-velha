@@ -22,12 +22,8 @@ tabuleiro['c']['2'] = 0;
 tabuleiro['c']['3'] = 0;
 
 function setBot(nivelJogo) {
-    if (cont > 1) {
-        alert("Reinicie o jogo e depois clique em Jogar contra Bot");
-    } else {
-        boot = true;
-        nivel = nivelJogo;
-    }
+    boot = true;
+    nivel = nivelJogo;
 }
 
 function reload() {
@@ -170,17 +166,25 @@ function inteligentao(id) {
     let jogada = id.split('_');
     jogada = jogada.toString();
     if (nivel == 'facil') {
-        if (!para && jogoAtivo) jogaMeio();
         if (!para && jogoAtivo) verificaDiagonal('o');
         if (!para && jogoAtivo) verificaDiagonalSecundaria('o');
         if (!para && jogoAtivo) verificaLinha('a', 'o');
         if (!para && jogoAtivo) verificaLinha('b', 'o');
         if (!para && jogoAtivo) verificaLinha('c', 'o');
+        if (!para && jogoAtivo) verificaDiagonalSecundaria('x');
+        if (!para && jogoAtivo) verificaDiagonal('x');
+        if (!para && jogoAtivo) verificaLinha('a', 'x');
+        if (!para && jogoAtivo) verificaLinha('b', 'x');
+        if (!para && jogoAtivo) verificaLinha('c', 'x');
         if (!para && jogoAtivo) verificaColuna(1, 'o');
         if (!para && jogoAtivo) verificaColuna(2, 'o');
         if (!para && jogoAtivo) verificaColuna(3, 'o');
+        if (!para && jogoAtivo) verificaColuna(1, 'x');
+        if (!para && jogoAtivo) verificaColuna(2, 'x');
+        if (!para && jogoAtivo) verificaColuna(3, 'x');
         if (!para && jogoAtivo) randown();
     } else if (nivel == 'medio') {
+        if (!para && jogoAtivo) jogaMeio();
         if (!para && jogoAtivo) verificaDiagonal('o');
         if (!para && jogoAtivo) verificaDiagonalSecundaria('o');
         if (!para && jogoAtivo) verificaLinha('a', 'o');
@@ -331,5 +335,10 @@ const jogaMeio = () => {
     if (tabuleiro['b']['2'] == 0) {
         inserirImagem('o','b_2');
         return para = true;
+    } else {
+        if (cont == 2 && nivel == 'dificil') {
+            inserirImagem('o','a_1');
+            return para = true;
+        }
     }
 }
