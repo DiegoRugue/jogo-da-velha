@@ -220,6 +220,7 @@ function inteligentao(id) {
         if (!para && jogoAtivo) verificaColuna(1, 'x');
         if (!para && jogoAtivo) verificaColuna(2, 'x');
         if (!para && jogoAtivo) verificaColuna(3, 'x');
+        if (!para && jogoAtivo) jogaCanto();
         if (!para && jogoAtivo) randown();
     }
 
@@ -340,5 +341,21 @@ const jogaMeio = () => {
             inserirImagem('o','a_1');
             return para = true;
         }
+    }
+}
+
+const jogaCanto = () => {
+    if (tabuleiro['a']['1'] == 0) {
+        inserirImagem('o','a_1');
+        return para = true;
+    } else if (tabuleiro['a']['3'] == 0) {
+        inserirImagem('o', 'a_3');
+        return para = true;
+    } else if (tabuleiro['c']['1'] == 0) {
+        inserirImagem('o', 'c_1');
+        return para = true;
+    } else if(tabuleiro['c']['3']) {
+        inserirImagem('o','c_3');
+        return para = true;
     }
 }
